@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "D3 Sample",
+  "name": "Samples with React, D3, Drag-and-Drop and animations",
   "icons": [
     {
       "src": "favicon.ico",

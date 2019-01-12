@@ -3,9 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.6",
+    "d3": "^5.7.0",
+    "lodash": "^4.17.11",
     "react": "^16.6.0",
+    "react-dnd": "^7.0.2",
+    "react-dnd-mouse-backend": "^1.0.0-rc.1",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.1.1"
+    "react-motion": "^0.5.2",
+    "react-redux": "^6.0.0",
+    "react-scripts": "2.1.1",
+    "react-svg-pan-zoom": "^2.18.0",
+    "redux": "^4.0.1",
+    "reselect": "^4.0.0",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
