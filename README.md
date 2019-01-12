@@ -1,44 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# react-d3-dnd-animation-example
 
-## Available Scripts
+A minimal working example of using a completely React controlled, D3 application incorporating drag and drop with animation.
 
-In the project directory, you can run:
+## Why?
 
-### `npm start`
+I was working on a React project which required that I write an interactive visualization/chart which the users could manipulate some hierarchical information. This was pretty straight forward using plain [D3](https://d3js.org/) but wasn't sure how this would work in React where it wants to own changes to the DOM.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+So after researching it a bit it seems that what a lot of people do is use a React [ref](https://reactjs.org/docs/refs-and-the-dom.html) and just give D3 a section of the application to control and just tell React to leave it alone. I wasn't really satisfied with that and wondered if I could write something which somehow used D3 to do the layout and hand render the components in React.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Turns out in release 3.4.0, D3 split the library into several libraries. It also turns out that most of the libraries don't actually do anything with the DOM. So I can ask it to absractly construct a visualization (given my data) then I can interpret and render that layout. So, why do it this way. This way has some pros (and cons) which I will elaborate on below, but it's all React. And... because I can.
 
-### `npm test`
+## Technologies used
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [React](https://reactjs.org) - for rendering the UI.
+- [Redux](https://redux.js.org) - for state management. Probably overkill for this but I wanted it to be realistic.
+- [react-dnd](https://github.com/react-dnd/react-dnd) - for drag and drop.
+- [react-motion](https://github.com/chenglou/react-motion) - for animation goodness. C'mon, this is supposed to mimick D3-ness, right?
