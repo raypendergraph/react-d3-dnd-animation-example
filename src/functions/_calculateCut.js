@@ -1,4 +1,4 @@
-import reject from "lodash/fp/reject";
+import without from "lodash/fp/without";
 
 const EMPTY_OBJECT = Object.freeze({});
 /**
@@ -17,7 +17,7 @@ export default ({ nodes }, { payload: id }) => {
       ...nodes,
       [parent.id]: {
         ...parent,
-        children: reject(v => v === id, parent.children)
+        children: without(id, parent.children)
       }
     }
   };

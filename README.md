@@ -2,6 +2,8 @@
 
 A minimal working example of using a completely React controlled, D3 application incorporating drag and drop with animation.
 
+The live version is [here](https://raypendergraph.github.io/react-d3-dnd-animation-example/).
+
 ## Why?
 
 I was working on a React project which required that I write an interactive visualization/chart which the users could manipulate some hierarchical information. This was pretty straight forward using plain [D3](https://d3js.org/) but wasn't sure how this would work in React where it wants to own changes to the DOM.
@@ -16,3 +18,4 @@ Turns out in release 3.4.0, D3 split the library into several libraries. It also
 - [Redux](https://redux.js.org) - for state management. Probably overkill for this but I wanted it to be realistic.
 - [react-dnd](https://github.com/react-dnd/react-dnd) - for drag and drop.
 - [react-motion](https://github.com/chenglou/react-motion) - for animation goodness. C'mon, this is supposed to mimick D3-ness, right?
+- [react-svg-pan-zoom](https://github.com/chrvadala/react-svg-pan-zoom) - to deal with navigating unknown sized trees and visualizations. This is a nice package and it just works.

@@ -9,6 +9,11 @@ export default {
     }
     const cutId = monitor.getItem().node.id;
     const targetId = props.node.id;
+    // Here we dispatch the move in two parts. This is because
+    // if we perform the entire move in the same tick then
+    // the TransitionMotion will be unaware a part of the graph
+    // has been removed before drawing the same nodes under a different
+    // parent causing key issues. This prevents that.
     store.dispatch(cutAction(cutId));
     setTimeout(() => {
       store.dispatch(pasteAction(cutId, targetId));

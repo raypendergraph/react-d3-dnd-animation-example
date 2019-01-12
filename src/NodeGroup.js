@@ -26,9 +26,6 @@ const willLeave = style => {
     y: spring(y, presets.gentle),
     // generic lerp sequence used for whatever: opacity, scale, etc.
     lerp: spring(0, presets.gentle),
-    // when drag and drop occurs then the nodes get removed and re-added
-    // and are using the same id which confuses react so we use this
-    // to mark the leaving versions as tmp.
     isEntering: 0,
     isLeaving: 1
   };
@@ -51,6 +48,12 @@ const toStyle = node => {
 /**
  * The main reason for this component is to introduce a list component to
  * implement the animations.
+ *
+ *
+ * When a drag occurs, identical nodes show up in the TransitionMotion
+ * component which obviously causes problems. To prevent this, nodes which
+ * are being transitioned off or on get a flag in their keys. This allows
+ * the same node to be "coming off" and "going on".
  * @param {*} param0
  */
 const NodeGroup = ({ nodes, handleDoubleClick, item, isDragging, ...rest }) => (
